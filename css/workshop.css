@@ -1,0 +1,248 @@
+html { font-size: 100%; padding: 0; margin: 0; }
+body { font-size: 62.5%; padding: 0; margin: 0; }
+html, body {
+    min-height: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-smooth: always;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica, Arial, sans-serif;
+}
+h1 {
+    font-size: 3.6em;
+    line-height: 1.111em;
+    margin: 0 0 0.5em;
+}
+h2 {
+    font-size: 2.2em;
+    line-height: 1.111em;
+    margin: 0;
+}
+h3 {
+    font-size: 1.4em;
+    margin: 0;
+}
+h4 {
+    font-size: 1.2em;
+    margin: 0;
+}
+ul li {
+    font-size: 1.2em;
+    line-height: 1.111em;
+}
+time {
+    color: #900;
+}
+div#wrapper {
+    position: absolute;
+    max-width: 96em;
+    width: 96em;
+    left: 50%;
+    margin: 1em 0 1em -48em;
+    min-height: 43.5em;
+    top: 0%;
+    border-top: 1px solid #900;
+    border-bottom: 1px solid #009;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    background: white;
+    -webkit-transition: all 1s;
+    /* Sctrech to contain */
+    overflow: hidden;
+}
+div#wrapper.loading {
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    min-height: 4em;
+    margin: -2em 0 0 -2em;
+    text-align: center;
+    border-top: 1px solid #787878;
+    border-bottom: 1px solid #787878;
+    -webkit-border-radius: 2em;
+    border-radius: 2em;
+    background: white url(/images/load.gif) no-repeat center 1em;
+    z-index: 99999;
+}
+
+
+
+
+
+header {
+   margin: 1em;
+   -webkit-transition: all 1s;
+}
+header h1 {
+   text-align: center;
+   font: 5em/1em Helvetica, Arial, sans-serif;
+   margin: 0.2em;
+}
+header nav {
+    text-align: center;
+    margin: 0 auto;
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+header nav ul li {
+    display: inline-block;
+    font-size: 1.4em;
+    line-height: 2.143em;
+    padding: 0 0.714em;
+    margin: 0 0.714em;
+    border-bottom: 1px solid #090;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    height: 2.143em;
+    overflow: hidden;
+}
+header nav ul li:hover {
+    background-color: #efefef;
+    cursor: pointer;
+}
+header nav ul li:active, header nav ul li.active {
+    margin-top: -1px;
+    border-top: 1px solid #999999;
+    border-bottom: none;
+    background-color: #efefef;
+    cursor: pointer;
+}
+header div#connection {
+    float: right;
+    font-size: 2em;
+    line-height: 1em;
+    text-align: center;
+    padding: 0.833em;
+    color: #090;
+}
+header div#connection.no-connection {
+    color: #900;
+}
+
+
+
+
+div#main {
+    overflow: hidden;
+    -webkit-transition: all 1s;
+}
+div#main .column {
+    width: 50%;
+    float: left;
+}
+div#main .column > div {
+    padding: 0 1em;
+}
+div#main div#registration-column div#registered {
+    display: none;
+}
+div#main div#registration-column.registered div#registered {
+    display: block;
+    font-size: 2em;
+    height: 12em;
+    text-align: center;
+}
+div#main div#registration-column.registered div#registered i {
+    font-size: 5em;
+    line-height: 1.2em;
+    color: #090;
+}
+div#main div#registration-column.registered form#registration {
+    display: none;
+}
+div#main form#registration {
+    margin: 0;
+    padding: 0;
+}
+div#main form#registration label {
+    display: inline-block;
+    min-width: 7em;
+    font-size: 1.2em;
+    line-height: 2em;
+    text-align: right;
+    margin-right: 0.833em;
+}
+div#main form#registration label.mandatory:before {
+    color: #900;
+    content: '* ';
+}
+div#main form#registration input {
+    width: 25em;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    box-sizing(border-box);
+    font-size: 1.2em;
+    line-height: 2em;
+    padding: 0 0.417em;
+    margin: 0;
+}
+div#main form#registration input#r-submit {
+    width: 10em;
+    border-radius: 2px;
+    margin-left: 8.1em;
+    border: 1px solid #800;
+    background-color: #900;
+    color: white;
+    box-sizing(border-box);
+    font-size: 1.2em;
+    line-height: 2em;
+    padding: 0 0.417em;
+    text-align: center;
+    cursor: pointer;
+}
+div#main form#registration input#r-submit:hover {
+    background-color: #a00;
+    border: 1px solid #b00;
+}
+div#main form#registration input#r-submit[disabled] {
+    background-color: #ccc;
+    border: 1px solid #eee;
+    color: #eee;
+}
+div#main form#registration input#r-submit.active {
+    background-color: #090;
+    border: 1px solid #0a0;
+}
+div#main form#registration input#r-submit.active:hover {
+    background-color #0a0;
+    border: 1px solid #0b0;
+}
+div#main form#registration hr {
+    visibility: hidden;
+}
+
+
+
+
+
+footer {
+   max-width: 96em;
+   min-height: 2em;
+   border-top: 1px solid #009;
+   -webkit-border-radius: 1em;
+   -webkit-transition: all 1s;
+   border-radius: 1em;
+   margin: 1em auto 0;
+   margin-top: 1em;
+   overflow: hidden;
+}
+footer .column {
+    width: 25%;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+footer .column > div {
+    padding: 1em 1em 0;
+}
+footer > div.end {
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 2em;
+}
+.hidden {
+    opacity: 0;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html public "display of Houstonian craftmanship">
+<html
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML Workshop by Houston Inc.</title>
+        
+        <link rel="stylesheet" href="css/font-awesome.css" />
+        <link rel="stylesheet" href="css/workshop.css" />
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
+        <script src="js/modernizr.js"></script>
+        <script src="js/jquery-1.7.2.js"></script>
+        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script>
+            $(document).ready(function() {
+                (function(window, document, $, undefined) {
+                    "use strict"
+                    String.prototype.f = function() {
+                        var s = this, i, l = arguments.length;
+                        if (typeof arguments[0] == 'object') {
+                            var obj = arguments[0];
+                            for (i in obj) {
+                                var reg = new RegExp("\\{" + i + "\\}", "gm");
+                                s = s.replace(reg, obj[i]);
+                            }
+                        } else {
+                            for (i = 0; i < l; i++) {
+                                var reg = new RegExp("\\{" + i + "\\}", "gm");
+                                s = s.replace(reg, arguments[i]);
+                            }
+                        }
+                        return s;
+                    };
+                    
+                    var $templates = undefined,
+                        $wrapper = $("div#wrapper"),
+                        $main = $("div#main"),
+                        transitionCallbackEvent = undefined,
+                        callbackCalled = false,
+                        socket = undefined,
+                        specialEvent = function(eventName, original, process) {
+                            $.event.special[eventName] = {
+                                setup: function( data, namespaces ) {
+                                     $(this).bind(original, $.event.special[eventName].handler );
+                                },
+                                handler: function( event ) {
+                                    event.type = eventName;
+                                    if (!process || process(event)) {
+                                        $.event.handle.apply( this, arguments );
+                                    }
+                                },
+                                teardown: function( namespaces ) {
+                                    $(this).unbind(original, $.event.special[eventName].handler );
+                                }
+                            }
+                        },
+                        getStyle = function(selector) {
+                            var classes = document.styleSheets[0].rules || document.styleSheets[0].cssRules,
+                                l = classes.length;
+                            for(var x = 0; x < l; x++) {
+                                if(classes[x].selectorText == selector) {
+                                    (classes[x].cssText) ? alert(classes[x].cssText) : alert(classes[x].style.cssText);
+                                }
+                            }
+                        },
+                        renderTemplate = function(target, template) {
+                            if(template !== undefined) {
+                                return $(target).html($templates.find(template).html());
+                            } else {
+                                template = target.indexOf("div#") < 0 ? "div#{0}".f(target) : target;
+                                return $(target).html($templates.find(template).html());
+                            }
+                        },
+                        connectSocket = function() {
+                            socket = io.connect("http://localhost:3000");
+                            socket.on("handshake", function() {
+                                $("div#connection").removeClass("no-connection").attr("title", "Connected");
+                            });
+                            socket.on("registered", function() {
+                                $("div#registration-column").addClass("registered");
+                            });
+                        },
+                        init = function() {
+                            specialEvent("transitionEnd","webkitTransitionEnd mozTransitionEnd oTransitionEnd msTransitionEnd transitionend");
+                            setTimeout(function() { 
+                                $wrapper.removeClass('loading');
+                                var callback = function() {
+                                    $("header").removeClass("hidden");
+                                    $("footer").removeClass("hidden");
+                                    $("div#main").removeClass("hidden");
+                                    connectSocket();
+                                    $("form#registration").on("submit", function(event) {
+                                        event.preventDefault();
+                                        var registration = {},
+                                            mandatoryFields = ['firstname', 'lastname', 'email'],
+                                            valid = true;
+                                        $(this).find("input[type=text]").each(function() {
+                                            registration[this.name] = this.value;
+                                            if(this.name in mandatoryFields && this.value.length == 0) {
+                                                valid = false;
+                                            }
+                                        });
+                                        if(valid) {
+                                            socket.emit("register", {
+                                                data: JSON.stringify(registration)
+                                            });
+                                        }
+                                    });
+                                    
+                                    callbackCalled = true;
+                                }
+                                if(Modernizr.csstransitions) {
+                                    $wrapper.on('transitionEnd', function() {
+                                        clearTimeout(transitionCallbackEvent);
+                                        transitionCallbackEvent = setTimeout(function() {
+                                            if(!callbackCalled) callback();
+                                        }, 100);
+                                    });
+                                } else {
+                                    $wrapper.animate(getStyle("div#main"), function() {
+                                        callback();
+                                    });
+                                }
+                            }, 2000);
+                            renderTemplate("header");
+                            renderTemplate("footer");
+                            renderTemplate("div#main");
+                        };
+                    $.get("/templates/all.html", function(data, status) {
+                        if(status == 'success') {
+                            $templates = $(data);
+                            init();
+                        } else {
+                            //error
+                        }
+                    });
+                })(window, document, jQuery, undefined);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper" class="loading">
+            <header class="hidden"></header>
+            <div id="main" class="hidden">
+            </div>
+            <footer class="hidden"></footer>
+        </div>
+    </body>
+</html>

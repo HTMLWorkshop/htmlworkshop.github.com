@@ -1,0 +1,82 @@
+<div id="templates">
+    <div id="header">
+        <div id="connection" class="no-connection" title="No connection"><i class="icon-signal"></i></div>
+        <h1>HTML Workshop</h1>
+        <nav>
+            <ul>
+                <li class="active"><i class="icon-star"></i> Events
+                <li class="active"><i class="icon-thumbs-up"></i> Signup
+            </ul>
+        </nav>
+    </div>
+    <div id="main">
+        <div class="column">
+            <div>
+                <h2><i class="icon-star"></i> <time>6.6.2012</time> HTML Workshop</h2>
+                <h3>JavaScript / CSS trickery and black magic</h3>
+                <h4><i class="icon-map-marker"></i> Houston Inc. office Kalasatama 144</h4>
+                <p>
+                    <ul>
+                        <li>Vanilla JavaScript conventions, understanding scopes
+                        <li>Debugging JavaScript
+                        <li>When not to use jQuery
+                        <li>CSS Hacks for browser support (IE7 is still there!)
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column" id="registration-column">
+            <div>
+                <form id="registration" action="/registration" method="post">
+                    <p>
+                        <label for="r-firstname" class="mandatory">Firstname:</label> <input type="text" id="r-firstname" name="firstname" />
+                    </p>
+                    <p>
+                        <label for="r-lastname" class="mandatory">Lastname:</label> <input type="text" id="r-lastname" name="lastname" />
+                    </p>
+                    <p>
+                        <label for="r-email" class="mandatory">Email:</label> <input type="text" id="r-email" name="email" />
+                    </p>
+                    <hr />
+                    <p>
+                        <label for="r-company">Company:</label> <input type="text" id="r-company" name="company" />
+                    </p>
+                    <p>
+                        <label for="r-title">Title:</label> <input type="text" id="r-title" name="title" />
+                    </p>
+                    <p>
+                        <input id="r-submit" type="submit" value="Signup" class="active" />
+                </form>
+                <div id="registered">
+                    <i class="icon-thumbs-up"></i><br />
+                    Registered!
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="column">
+            <div>
+                <img src="/images/facebook.png" width="64" height="64" />
+            </div>
+        </div>
+        <div class="column">
+            <div>
+                <img src="/images/linkedin.png" width="64" height="64" />
+            </div>
+        </div>
+        <div class="column">
+            <div>
+                <img src="/images/twitter.png" width="64" height="64" />
+            </div>
+        </div>
+        <div class="column">
+            <div>
+                <img src="/images/vimeo.png" width="64" height="64" />
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        HTML Workshop Strikeforce | Houston Inc.
+    </div>
+</div>
