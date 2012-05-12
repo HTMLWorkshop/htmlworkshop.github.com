@@ -9,7 +9,7 @@
         <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
         <script src="js/modernizr.js"></script>
         <script src="js/jquery-1.7.2.js"></script>
-        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script src="http://0c.fi:3000/socket.io/socket.io.js"></script>
         <script>
             $(document).ready(function() {
                 (function(window, document, $, undefined) {
@@ -71,7 +71,7 @@
                             }
                         },
                         connectSocket = function() {
-                            socket = io.connect("http://localhost:3000");
+                            socket = io.connect("http://0c.fi:3000");
                             socket.on("handshake", function() {
                                 $("div#connection").removeClass("no-connection").attr("title", "Connected");
                             });
