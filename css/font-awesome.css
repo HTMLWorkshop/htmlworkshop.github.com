@@ -23,11 +23,11 @@
     */
 
 @font-face {
-    font-family: 'failRegular';
-    src: url('../font/fail-webfont.eot');
-    src: url('../font/fail-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/fail-webfont.woff') format('woff'),
-         url('../font/fail-webfont.ttf') format('truetype');
+    font-family: 'KarmaticArcadeRegular';
+    src: url('../font/ka1-webfont.eot');
+    src: url('../font/ka1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/ka1-webfont.woff') format('woff'),
+         url('../font/ka1-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
