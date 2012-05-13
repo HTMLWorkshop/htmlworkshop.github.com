@@ -45,7 +45,8 @@ div#wrapper {
     -moz-transition: all 1s ease 0s;
     background: none repeat scroll 0 0 white;
     border-bottom: 10px solid #581C7B;
-    border-radius: 40px 40px 40px 40px;
+    border-radius: 10px 10px 10px 10px;    
+    -webkit-border-radius: 10px;
     border-top: 10px solid #FF6902;
     left: 50%;
     margin: 1em 0 1em -48em;
@@ -55,6 +56,12 @@ div#wrapper {
     position: absolute;
     top: 0;
     width: 90em;
+    background: white;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;	
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
 }
 div#wrapper.loading {
     top: 50%;
