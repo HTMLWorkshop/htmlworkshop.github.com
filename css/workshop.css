@@ -1,5 +1,10 @@
 html { font-size: 100%; padding: 0; margin: 0; }
-body { font-size: 62.5%; padding: 0; margin: 0; }
+body { 
+    font-size: 62.5%; 
+    padding: 0; 
+    margin: 0;
+    background-color: #E8E3E2;
+}
 html, body {
     min-height: 100%;
     -webkit-font-smoothing: subpixel-antialiased;
@@ -34,28 +39,22 @@ ul li {
     line-height: 1.111em;
 }
 time {
-    color: #900;
+    color: #FF6902;
 }
 div#wrapper {
-    position: absolute;
-    max-width: 96em;
-    width: 96em;
+    -moz-transition: all 1s ease 0s;
+    background: none repeat scroll 0 0 white;
+    border-bottom: 10px solid #581C7B;
+    border-radius: 40px 40px 40px 40px;
+    border-top: 10px solid #FF6902;
     left: 50%;
     margin: 1em 0 1em -48em;
+    max-width: 90em;
     min-height: 43.5em;
-    top: 0%;
-    border-top: 1px solid #900;
-    border-bottom: 1px solid #009;
-    -webkit-border-radius: 1em;
-    border-radius: 1em;
-    background: white;
-    -webkit-transition: all 1s;
-       -moz-transition: all 1s;
-        -ms-transition: all 1s;
-         -o-transition: all 1s;
-    transition: all 1s;
-    /* Sctrech to contain */
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 90em;
 }
 div#wrapper.loading {
     top: 50%;
@@ -78,17 +77,22 @@ div#wrapper.loading {
 
 
 header {
-   margin: 1em;
+/*   margin: 1em; */
    -webkit-transition: all 1s;
       -moz-transition: all 1s;
        -ms-transition: all 1s;
         -o-transition: all 1s;
    transition: all 1s;
+    background-color: #581C7B;
+    border-bottom: 10px solid #000000;
 }
 header h1 {
    text-align: center;
    font: 5em/1.2em 'KarmaticArcadeRegular', Helvetica, Arial, sans-serif;
-   margin: 0.2em;
+   /*margin: 0.2em;*/
+   padding-top: 20px;
+   color: #ffffff;
+   text-shadow: 5px 5px #000;
 }
 header nav {
     text-align: center;
@@ -140,6 +144,9 @@ header div#connection.no-connection {
 div#main {
     overflow: hidden;
     -webkit-transition: all 1s;
+    padding-left: 10em;
+    padding-right: 10em;
+    padding-top: 2em;
 }
 div#main .column {
     width: 50%;
@@ -182,7 +189,7 @@ div#main form#registration label.mandatory:before {
     content: '* ';
 }
 div#main form#registration input {
-    width: 25em;
+    width: 15em;
     border-radius: 2px;
     border: 1px solid #ccc;
     box-sizing(border-box);
@@ -195,8 +202,8 @@ div#main form#registration input#r-submit {
     width: 10em;
     border-radius: 2px;
     margin-left: 8.1em;
-    border: 1px solid #800;
-    background-color: #900;
+    border: 1px solid #3310FF;
+    background-color: #3310FF;
     color: white;
     box-sizing(border-box);
     font-size: 1.2em;
@@ -204,6 +211,8 @@ div#main form#registration input#r-submit {
     padding: 0 0.417em;
     text-align: center;
     cursor: pointer;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 div#main form#registration input#r-submit:hover {
     background-color: #a00;
@@ -231,19 +240,14 @@ div#main form#registration hr {
 
 
 footer {
+    -moz-transition: all 1s ease 0s;
+    border-radius: 1em 1em 1em 1em;
+    margin: 1em auto 0;
     max-width: 96em;
     min-height: 2em;
-    border-top: 1px solid #009;
-    -webkit-border-radius: 1em;
-    -webkit-transition: all 1s;
-       -moz-transition: all 1s;
-        -ms-transition: all 1s;
-         -o-transition: all 1s;
-    transition: all 1s;
-    border-radius: 1em;
-    margin: 1em auto 0;
-    margin-top: 1em;
     overflow: hidden;
+    padding-left: 25em;
+    padding-right: 25em;
 }
 footer .column {
     width: 25%;
