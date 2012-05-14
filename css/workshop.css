@@ -44,10 +44,10 @@ time {
 div#wrapper {
     -moz-transition: all 1s ease 0s;
     background: none repeat scroll 0 0 white;
-    border-bottom: 10px solid #581C7B;
+    /*border-bottom: 10px solid #581C7B; */
     border-radius: 10px 10px 10px 10px;    
     -webkit-border-radius: 10px;
-    border-top: 10px solid #FF6902;
+    border: 1px solid #FF6902;
     left: 50%;
     margin: 1em 0 1em -48em;
     max-width: 90em;
@@ -92,6 +92,7 @@ header {
    transition: all 1s;
     background-color: #581C7B;
     border-bottom: 10px solid #000000;
+    border-radius: 5px 5px 0 0;
 }
 header h1 {
    text-align: center;
