@@ -18,14 +18,23 @@ h1 {
     line-height: 1.111em;
     margin: 0 0 0.5em;
 }
+h2 .title {
+    display: block;
+    font-size: 1.2em;
+}
+
 h2 {
     font-size: 2.2em;
     line-height: 1.111em;
     margin: 0;
+    padding-bottom: 0.8em;
+    text-shadow:2px 2px 0 #000000;
 }
 h3 {
     font-size: 1.4em;
     margin: 0;
+    padding-bottom: 1em;
+    text-shadow: 1px 1px 0 #000000;
 }
 h4 {
     font-size: 1.2em;
@@ -35,9 +44,18 @@ h4 a {
     text-decoration: none;
     color: #009900;
 }
+p {
+    font-size: 1.4em;
+    line-height: 1.3em;
+}
+
+div#registration-column p {
+    font-size: 1em;
+}
+
 ul li {
-    font-size: 1.2em;
-    line-height: 1.111em;
+    font-size: 1.4em;
+    line-height: 1.5em;
 }
 time {
     color: #FF6902;
