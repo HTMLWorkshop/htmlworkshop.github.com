@@ -3,7 +3,7 @@ body {
     font-size: 62.5%; 
     padding: 0; 
     margin: 0;
-    background-color: #E8E3E2;
+    background: url("../images/chalkboard.jpg") no-repeat scroll center top #000000;
 }
 html, body {
     min-height: 100%;
@@ -11,6 +11,7 @@ html, body {
     font-smooth: always;
     text-rendering: optimizeLegibility;
     font-family: Helvetica, Arial, sans-serif;
+    color: #ffffff;
 }
 h1 {
     font-size: 3.6em;
@@ -32,7 +33,7 @@ h4 {
 }
 h4 a {
     text-decoration: none;
-    color: #009;
+    color: #009900;
 }
 ul li {
     font-size: 1.2em;
@@ -43,20 +44,19 @@ time {
 }
 div#wrapper {
     -moz-transition: all 1s ease 0s;
-    background: none repeat scroll 0 0 white;
+    background: none repeat scroll 0 0 transparent;
     /*border-bottom: 10px solid #581C7B; */
     border-radius: 10px 10px 10px 10px;    
     -webkit-border-radius: 10px;
-    border: 1px solid #FF6902;
+    /*border: 1px solid #FF6902;*/
     left: 50%;
-    margin: 1em 0 1em -48em;
+    margin: 1em 0 1em -45em;
     max-width: 90em;
     min-height: 43.5em;
     overflow: hidden;
     position: absolute;
     top: 0;
     width: 90em;
-    background: white;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;	
     -ms-transition: all 1s;
@@ -71,11 +71,11 @@ div#wrapper.loading {
     min-height: 4em;
     margin: -2em 0 0 -2em;
     text-align: center;
-    border-top: 1px solid #787878;
-    border-bottom: 1px solid #787878;
+    /*border-top: 1px solid #787878;
+    border-bottom: 1px solid #787878;*/
     -webkit-border-radius: 2em;
     border-radius: 2em;
-    background: white url(/images/load.gif) no-repeat center 1em;
+    background: transparent url(/images/ajax-loader.gif) no-repeat center 1em;
     z-index: 99999;
 }
 
@@ -90,17 +90,17 @@ header {
        -ms-transition: all 1s;
         -o-transition: all 1s;
    transition: all 1s;
-    background-color: #581C7B;
+    /*background-color: #581C7B;
     border-bottom: 10px solid #000000;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;*/
 }
 header h1 {
    text-align: center;
-   font: 5em/1.2em 'KarmaticArcadeRegular', Helvetica, Arial, sans-serif;
+   font: 7em/1.2em 'ÆnigmaScrawl4BRKRegular', Helvetica, Arial, sans-serif;
    /*margin: 0.2em;*/
    padding-top: 20px;
    color: #ffffff;
-   text-shadow: 5px 5px #000;
+   /*text-shadow: 5px 5px #000;*/
 }
 header nav {
     text-align: center;
@@ -261,6 +261,9 @@ footer .column {
     width: 25%;
     float: left;
     overflow: hidden;
+    text-align: center;
+}
+footer .houston_logo {
     text-align: center;
 }
 footer .column > div {
