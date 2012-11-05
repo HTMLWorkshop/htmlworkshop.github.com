@@ -49,6 +49,10 @@ p {
     line-height: 1.3em;
 }
 
+p a {
+    color: #009900;   
+}
+
 div#registration-column p {
    /* font-size: 1em; */
 }
